@@ -1,5 +1,5 @@
 
-# Sarantsev.Shared.ExceptionMiddleware
+# Infobip.Shared.ExceptionMiddleware
 
 The library provides the middleware to handle exceptions and returns appropriate responses.
 
@@ -25,8 +25,8 @@ Please use **UseExceptionMiddleware(IApplicationBuilder)** extension method for 
         {
 			...
             services
-                .RegisterException<TransformationSchemasValidationException, TransformationSchemasNotValidResponse>()
-                .WithAction((r, e) => e.TransformationSchemaErrors = e.TransformationSchemaErrors)
+                .RegisterException<MyCustomException, MyCustomResponse>()
+                .WithAction((r, e) => e.CustomErrors = e.CustomErrors)
                 .WithStatusCode(StatusCodes.Status422UnprocessableEntity);
             ...
         }
@@ -41,7 +41,7 @@ If the midlleware is registered in the Configure method, all unhandled exception
 ```c#
 			...
             services
-                .RegisterException<TransformationSchemasValidationException>()
+                .RegisterException<MyCustomException>()
                 .WithStatusCode(StatusCodes.Status422UnprocessableEntity);
             ...
 ```
@@ -51,7 +51,7 @@ If the midlleware is registered in the Configure method, all unhandled exception
 ```c#
 			...
             services
-                .RegisterException<TransformationSchemasValidationException, TransformationSchemasNotValidResponse>()
+                .RegisterException<MyCustomException, MyCustomResponse>()
                 .WithStatusCode(StatusCodes.Status422UnprocessableEntity);
             ...
 ```
@@ -62,7 +62,7 @@ Please note that the response type should be an inheritor on the **ProblemDetail
 ```c#
 			...
             services
-                .RegisterException<TransformationSchemasValidationException, TransformationSchemasNotValidResponse>()
+                .RegisterException<MyCustomException, MyCustomResponse>()
 				.WithAction((r, e) => r.SomeResponseData = e.SomeExceptionData)
                 .WithStatusCode(StatusCodes.Status422UnprocessableEntity);
             ...

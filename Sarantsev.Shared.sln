@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sarantsev.Shared.ExceptionM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sarantsev.Shared.ExceptionMiddleware.Tests", "tests\Sarantsev.Shared.ExceptionMiddleware.Tests\Sarantsev.Shared.ExceptionMiddleware.Tests.csproj", "{5E45337A-E231-459E-8EFE-711844339413}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{52ED3767-F4C2-44A3-9EDF-FE22EEB4A79B}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
